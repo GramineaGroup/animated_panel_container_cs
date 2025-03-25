@@ -13,7 +13,7 @@ config_version=5
 config/name="Animated Panel Container CS"
 run/main_scene="uid://1nof6kjud2w8"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://icons/icon.svg"
 
 [dotnet]
 

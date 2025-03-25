@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://3mo5x0o8458e"]
 
-[ext_resource type="Theme" uid="uid://dicxmbke0imcl" path="res://Theme.tres" id="1_iinvp"]
+[ext_resource type="Theme" uid="uid://dicxmbke0imcl" path="res://scenes/Theme.tres" id="1_iinvp"]
 [ext_resource type="Texture2D" uid="uid://o1ln7v6iuk5v" path="res://icons/close.svg" id="2_2au82"]
-[ext_resource type="Script" uid="uid://g881g87l7fcv" path="res://Vertical.cs" id="2_jbg0x"]
+[ext_resource type="Script" uid="uid://g881g87l7fcv" path="res://scenes/same/Vertical.cs" id="2_jbg0x"]
 [ext_resource type="Texture2D" uid="uid://dgknwv7v86hcn" path="res://icons/Under.svg" id="4_aq4fw"]
 [ext_resource type="Script" uid="uid://cqtexcwratk6l" path="res://addons/animated_panel_container_cs/AnimatedPanelContainer.cs" id="4_esopc"]
 [ext_resource type="Texture2D" uid="uid://dunatko0dk4n3" path="res://icons/TwitterLogo.svg" id="5_aq4fw"]
