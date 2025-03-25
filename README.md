@@ -6,8 +6,6 @@ This plugin will animate size and visibility change in container.
 
 GDScrpit version is at [GramineaGroup/animated_panel_container_gdscript](https://github.com/GramineaGroup/animated_panel_container_gdscript)
 
-Side notes: It seems that GDScript version is faster than C# version.
-
 Please submit any issues you found. Contribution and suggestions are warmly welcomed.
 
 ## Demo
