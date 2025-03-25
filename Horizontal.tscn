@@ -22,6 +22,7 @@ corner_radius_bottom_left = 18
 [node name="Horizontal" type="PanelContainer"]
 offset_right = 394.0
 offset_bottom = 628.0
+size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("1_dxbve")
 theme_type_variation = &"Test"
