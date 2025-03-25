@@ -23,8 +23,8 @@ public partial class AnimatedPanelContainer : PanelContainer
 
     public AnimatedPanelContainer AnimatedHide(double duration)
     {
-        AnimatedTransparentHide(duration);
-        AnimatedCollapse(duration);
+        AnimatedTransparentHide(duration / 2);
+        AnimatedCollapse(duration / 2);
         return this;
     }
 
