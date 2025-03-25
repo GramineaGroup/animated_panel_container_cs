@@ -1,0 +1,182 @@
+[gd_scene load_steps=12 format=3 uid="uid://3mo5x0o8458e"]
+
+[ext_resource type="Theme" uid="uid://dicxmbke0imcl" path="res://Theme.tres" id="1_iinvp"]
+[ext_resource type="Texture2D" uid="uid://o1ln7v6iuk5v" path="res://icons/close.svg" id="2_2au82"]
+[ext_resource type="Script" uid="uid://g881g87l7fcv" path="res://Vertical.cs" id="2_c4vo5"]
+[ext_resource type="Texture2D" uid="uid://dgknwv7v86hcn" path="res://icons/Under.svg" id="4_aq4fw"]
+[ext_resource type="Texture2D" uid="uid://dunatko0dk4n3" path="res://icons/TwitterLogo.svg" id="5_aq4fw"]
+[ext_resource type="Texture2D" uid="uid://dsqxfi7ehknxi" path="res://icons/Progress.svg" id="5_ivycn"]
+[ext_resource type="Texture2D" uid="uid://drgo2kfcvo2qo" path="res://icons/Arrow_Left.svg" id="7_qs82m"]
+[ext_resource type="Script" uid="uid://cqtexcwratk6l" path="res://addons/animated_panel_container_cs/AnimatedPanelContainer.cs" id="7_vmds0"]
+[ext_resource type="Texture2D" uid="uid://deu4a4e63ffys" path="res://icons/Arrow_Right.svg" id="8_c4vo5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bibmp"]
+bg_color = Color(0.4, 0.388, 0.365, 0.2)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="FontVariation" id="FontVariation_c4vo5"]
+
+[node name="Vertical" type="PanelContainer"]
+offset_right = 394.0
+offset_bottom = 628.0
+size_flags_vertical = 0
+theme = ExtResource("1_iinvp")
+theme_type_variation = &"Test"
+script = ExtResource("2_c4vo5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TopMarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_iinvp")
+theme_type_variation = &"TopMarginContainer"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TopMarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/TopMarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="VBoxContainer/TopMarginContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_bibmp")
+icon = ExtResource("2_2au82")
+icon_alignment = 1
+
+[node name="ProgressBarContainer" type="PanelContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("7_vmds0")
+
+[node name="ProgressBarMarginContainer" type="MarginContainer" parent="VBoxContainer/ProgressBarContainer"]
+layout_mode = 2
+theme = ExtResource("1_iinvp")
+theme_type_variation = &"ProgressBarMarginContainer"
+
+[node name="ProgressBar" type="TextureProgressBar" parent="VBoxContainer/ProgressBarContainer/ProgressBarMarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+value = 75.0
+fill_mode = 4
+texture_under = ExtResource("4_aq4fw")
+texture_progress = ExtResource("5_ivycn")
+texture_progress_offset = Vector2(5, 5)
+
+[node name="IconMarginContainer" type="MarginContainer" parent="VBoxContainer/ProgressBarContainer/ProgressBarMarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_iinvp")
+theme_type_variation = &"IconMarginContainer"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ProgressBarContainer/ProgressBarMarginContainer/IconMarginContainer"]
+layout_mode = 2
+texture = ExtResource("5_aq4fw")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="CenterMarginContainer" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(394, 0)
+layout_mode = 2
+theme = ExtResource("1_iinvp")
+theme_type_variation = &"CenterMarginContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/CenterMarginContainer"]
+layout_mode = 2
+
+[node name="ContentLabelContainer" type="PanelContainer" parent="VBoxContainer/CenterMarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("7_vmds0")
+
+[node name="ContentLabelMarginContainer" type="MarginContainer" parent="VBoxContainer/CenterMarginContainer/VBoxContainer/ContentLabelContainer"]
+layout_mode = 2
+theme = ExtResource("1_iinvp")
+theme_type_variation = &"ContentLabelMarginContainer"
+
+[node name="ContentLabel" type="Label" parent="VBoxContainer/CenterMarginContainer/VBoxContainer/ContentLabelContainer/ContentLabelMarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 24
+theme_override_font_sizes/font_size = 16
+text = "Hello World"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/CenterMarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="LeftButtonPanelContainer" type="PanelContainer" parent="VBoxContainer/CenterMarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+script = ExtResource("7_vmds0")
+
+[node name="LeftButton" type="Button" parent="VBoxContainer/CenterMarginContainer/VBoxContainer/HBoxContainer/LeftButtonPanelContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("1_iinvp")
+theme_type_variation = &"ActionButton"
+icon = ExtResource("7_qs82m")
+icon_alignment = 1
+
+[node name="ExpandButton" type="Button" parent="VBoxContainer/CenterMarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_iinvp")
+theme_type_variation = &"ExpandButton"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_c4vo5")
+theme_override_font_sizes/font_size = 36
+text = "Expand"
+
+[node name="RightButtonPanelContainer" type="PanelContainer" parent="VBoxContainer/CenterMarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+script = ExtResource("7_vmds0")
+
+[node name="RightButton" type="Button" parent="VBoxContainer/CenterMarginContainer/VBoxContainer/HBoxContainer/RightButtonPanelContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("1_iinvp")
+theme_type_variation = &"ActionButton"
+icon = ExtResource("8_c4vo5")
+icon_alignment = 1
+
+[node name="BottomContainer" type="PanelContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("7_vmds0")
+
+[node name="BottomMarginContainer" type="MarginContainer" parent="VBoxContainer/BottomContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_iinvp")
+theme_type_variation = &"BottomMarginContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/BottomContainer/BottomMarginContainer"]
+layout_mode = 2
+
+[node name="ActionButton" type="Button" parent="VBoxContainer/BottomContainer/BottomMarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(91, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_iinvp")
+theme_type_variation = &"ActionButton"
+text = "Shrink"
+
+[connection signal="pressed" from="VBoxContainer/TopMarginContainer/HBoxContainer/PanelContainer/CloseButton" to="." method="OnCloseButtonPressed"]
+[connection signal="pressed" from="VBoxContainer/CenterMarginContainer/VBoxContainer/HBoxContainer/ExpandButton" to="." method="OnExpandButtonPressed"]
+[connection signal="pressed" from="VBoxContainer/BottomContainer/BottomMarginContainer/VBoxContainer/ActionButton" to="." method="OnActionButtonPressed"]

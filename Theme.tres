@@ -1,0 +1,53 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dicxmbke0imcl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1he3"]
+bg_color = Color(0.992157, 0.745098, 0.784314, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1fv3d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t1he3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abrne"]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[resource]
+ActionButton/base_type = &"Button"
+ActionButton/colors/font_color = Color(0, 0, 0, 1)
+ActionButton/font_sizes/font_size = 14
+ActionButton/styles/normal = SubResource("StyleBoxFlat_t1he3")
+BottomMarginContainer/base_type = &"MarginContainer"
+BottomMarginContainer/constants/margin_bottom = 36
+BottomMarginContainer/constants/margin_top = 12
+CenterMarginContainer/base_type = &"MarginContainer"
+CenterMarginContainer/constants/margin_bottom = 30
+CenterMarginContainer/constants/margin_left = 42
+CenterMarginContainer/constants/margin_right = 42
+ContentLabelMarginContainer/base_type = &"MarginContainer"
+ContentLabelMarginContainer/constants/margin_bottom = 26
+ExpandButton/base_type = &"Button"
+ExpandButton/styles/normal = SubResource("StyleBoxEmpty_1fv3d")
+IconMarginContainer/base_type = &"MarginContainer"
+IconMarginContainer/constants/margin_bottom = 70
+IconMarginContainer/constants/margin_left = 70
+IconMarginContainer/constants/margin_right = 70
+IconMarginContainer/constants/margin_top = 70
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_t1he3")
+ProgressBarMarginContainer/base_type = &"MarginContainer"
+ProgressBarMarginContainer/constants/margin_bottom = 23
+ProgressBarMarginContainer/constants/margin_left = 42
+ProgressBarMarginContainer/constants/margin_right = 42
+ProgressBarMarginContainer/constants/margin_top = 6
+Test/base_type = &"PanelContainer"
+Test/styles/panel = SubResource("StyleBoxFlat_abrne")
+TopMarginContainer/base_type = &"MarginContainer"
+TopMarginContainer/constants/margin_bottom = -8
+TopMarginContainer/constants/margin_left = 0
+TopMarginContainer/constants/margin_right = 17
+TopMarginContainer/constants/margin_top = 18

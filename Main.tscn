@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://1nof6kjud2w8"]
+
+[ext_resource type="PackedScene" uid="uid://3mo5x0o8458e" path="res://Vertical.tscn" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://bo6l162g757px" path="res://Horizontal.tscn" id="2_uu6xs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uu6xs"]
+
+[node name="Main" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -726.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_uu6xs")
+
+[node name="Vertical" parent="PanelContainer" instance=ExtResource("1_glv2v")]
+layout_mode = 2
+
+[node name="Horizontal" parent="PanelContainer" instance=ExtResource("2_uu6xs")]
+visible = false
+layout_mode = 2
