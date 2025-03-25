@@ -103,7 +103,6 @@ theme = ExtResource("1_iinvp")
 theme_type_variation = &"ContentLabelMarginContainer"
 
 [node name="ContentLabel" type="Label" parent="VBoxContainer/CenterMarginContainer/VBoxContainer/ContentLabelContainer/ContentLabelMarginContainer"]
-unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 24
@@ -173,14 +172,13 @@ theme_type_variation = &"BottomMarginContainer"
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/BottomContainer/BottomMarginContainer"]
 layout_mode = 2
 
-[node name="ActionButton" type="Button" parent="VBoxContainer/BottomContainer/BottomMarginContainer/VBoxContainer"]
-unique_name_in_owner = true
+[node name="CollapseButton" type="Button" parent="VBoxContainer/BottomContainer/BottomMarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(91, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_iinvp")
 theme_type_variation = &"ActionButton"
-text = "Shrink"
+text = "Collapse"
 
 [connection signal="pressed" from="VBoxContainer/CenterMarginContainer/VBoxContainer/HBoxContainer/ExpandButton" to="." method="OnExpandButtonPressed"]
-[connection signal="pressed" from="VBoxContainer/BottomContainer/BottomMarginContainer/VBoxContainer/ActionButton" to="." method="OnActionButtonPressed"]
+[connection signal="pressed" from="VBoxContainer/BottomContainer/BottomMarginContainer/VBoxContainer/CollapseButton" to="." method="OnCollapseButtonPressed"]

@@ -16,10 +16,8 @@ func _ready():
 	_progressbar_container = %ProgressBarContainer
 	_bottom_container = %BottomContainer
 	_content_label_container = %ContentLabelContainer
-	_content_label = %ContentLabel
 	_left_button_panel_container = %LeftButtonPanelContainer
 	_right_button_panel_container = %RightButtonPanelContainer
-	_action_button = %ActionButton
 
 func _on_tween_finished(state: bool) -> void:
 	_is_expanded = state
@@ -41,7 +39,9 @@ func _on_expand_button_pressed() -> void:
 	tween.tween_property(self, "custom_minimum_size", _size, _duration)
 	tween.finished.connect(_on_tween_finished.bind(true))
 
-func _on_action_button_pressed() -> void:
+func _on_collapse_button_pressed() -> void:
+	if not _is_expanded:
+		return
 	_size = size
 	custom_minimum_size = size
 	var tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
