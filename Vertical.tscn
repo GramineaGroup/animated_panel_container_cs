@@ -2,12 +2,12 @@
 
 [ext_resource type="Theme" uid="uid://dicxmbke0imcl" path="res://Theme.tres" id="1_iinvp"]
 [ext_resource type="Texture2D" uid="uid://o1ln7v6iuk5v" path="res://icons/close.svg" id="2_2au82"]
-[ext_resource type="Script" uid="uid://g881g87l7fcv" path="res://Vertical.cs" id="2_c4vo5"]
+[ext_resource type="Script" uid="uid://g881g87l7fcv" path="res://Vertical.cs" id="2_jbg0x"]
 [ext_resource type="Texture2D" uid="uid://dgknwv7v86hcn" path="res://icons/Under.svg" id="4_aq4fw"]
+[ext_resource type="Script" uid="uid://cqtexcwratk6l" path="res://addons/animated_panel_container_cs/AnimatedPanelContainer.cs" id="4_esopc"]
 [ext_resource type="Texture2D" uid="uid://dunatko0dk4n3" path="res://icons/TwitterLogo.svg" id="5_aq4fw"]
 [ext_resource type="Texture2D" uid="uid://dsqxfi7ehknxi" path="res://icons/Progress.svg" id="5_ivycn"]
 [ext_resource type="Texture2D" uid="uid://drgo2kfcvo2qo" path="res://icons/Arrow_Left.svg" id="7_qs82m"]
-[ext_resource type="Script" uid="uid://cqtexcwratk6l" path="res://addons/animated_panel_container_cs/AnimatedPanelContainer.cs" id="7_vmds0"]
 [ext_resource type="Texture2D" uid="uid://deu4a4e63ffys" path="res://icons/Arrow_Right.svg" id="8_c4vo5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bibmp"]
@@ -25,7 +25,7 @@ offset_bottom = 628.0
 size_flags_vertical = 0
 theme = ExtResource("1_iinvp")
 theme_type_variation = &"Test"
-script = ExtResource("2_c4vo5")
+script = ExtResource("2_jbg0x")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -53,7 +53,8 @@ icon_alignment = 1
 [node name="ProgressBarContainer" type="PanelContainer" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-script = ExtResource("7_vmds0")
+script = ExtResource("4_esopc")
+metadata/_custom_type_script = "uid://cqtexcwratk6l"
 
 [node name="ProgressBarMarginContainer" type="MarginContainer" parent="VBoxContainer/ProgressBarContainer"]
 layout_mode = 2
@@ -93,7 +94,8 @@ layout_mode = 2
 [node name="ContentLabelContainer" type="PanelContainer" parent="VBoxContainer/CenterMarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-script = ExtResource("7_vmds0")
+script = ExtResource("4_esopc")
+metadata/_custom_type_script = "uid://cqtexcwratk6l"
 
 [node name="ContentLabelMarginContainer" type="MarginContainer" parent="VBoxContainer/CenterMarginContainer/VBoxContainer/ContentLabelContainer"]
 layout_mode = 2
@@ -119,7 +121,8 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-script = ExtResource("7_vmds0")
+script = ExtResource("4_esopc")
+metadata/_custom_type_script = "uid://cqtexcwratk6l"
 
 [node name="LeftButton" type="Button" parent="VBoxContainer/CenterMarginContainer/VBoxContainer/HBoxContainer/LeftButtonPanelContainer"]
 custom_minimum_size = Vector2(40, 40)
@@ -143,7 +146,8 @@ text = "Expand"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-script = ExtResource("7_vmds0")
+script = ExtResource("4_esopc")
+metadata/_custom_type_script = "uid://cqtexcwratk6l"
 
 [node name="RightButton" type="Button" parent="VBoxContainer/CenterMarginContainer/VBoxContainer/HBoxContainer/RightButtonPanelContainer"]
 custom_minimum_size = Vector2(40, 40)
@@ -157,7 +161,8 @@ icon_alignment = 1
 [node name="BottomContainer" type="PanelContainer" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-script = ExtResource("7_vmds0")
+script = ExtResource("4_esopc")
+metadata/_custom_type_script = "uid://cqtexcwratk6l"
 
 [node name="BottomMarginContainer" type="MarginContainer" parent="VBoxContainer/BottomContainer"]
 unique_name_in_owner = true
@@ -177,6 +182,5 @@ theme = ExtResource("1_iinvp")
 theme_type_variation = &"ActionButton"
 text = "Shrink"
 
-[connection signal="pressed" from="VBoxContainer/TopMarginContainer/HBoxContainer/PanelContainer/CloseButton" to="." method="OnCloseButtonPressed"]
 [connection signal="pressed" from="VBoxContainer/CenterMarginContainer/VBoxContainer/HBoxContainer/ExpandButton" to="." method="OnExpandButtonPressed"]
 [connection signal="pressed" from="VBoxContainer/BottomContainer/BottomMarginContainer/VBoxContainer/ActionButton" to="." method="OnActionButtonPressed"]
