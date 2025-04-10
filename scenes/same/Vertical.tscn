@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://o1ln7v6iuk5v" path="res://icons/close.svg" id="2_2au82"]
 [ext_resource type="Script" uid="uid://g881g87l7fcv" path="res://scenes/same/Vertical.cs" id="2_jbg0x"]
 [ext_resource type="Texture2D" uid="uid://dgknwv7v86hcn" path="res://icons/Under.svg" id="4_aq4fw"]
-[ext_resource type="Script" uid="uid://cqtexcwratk6l" path="res://addons/animated_panel_container_cs/AnimatedPanelContainer.cs" id="4_esopc"]
+[ext_resource type="Script" uid="uid://c1thn6nufciqn" path="res://addons/animated_panel_container_cs/AnimatedPanelContainer.cs" id="4_esopc"]
 [ext_resource type="Texture2D" uid="uid://dunatko0dk4n3" path="res://icons/TwitterLogo.svg" id="5_aq4fw"]
 [ext_resource type="Texture2D" uid="uid://dsqxfi7ehknxi" path="res://icons/Progress.svg" id="5_ivycn"]
 [ext_resource type="Texture2D" uid="uid://drgo2kfcvo2qo" path="res://icons/Arrow_Left.svg" id="7_qs82m"]
@@ -54,7 +54,8 @@ icon_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("4_esopc")
-metadata/_custom_type_script = "uid://cqtexcwratk6l"
+DefaultTrans = 7
+DefaultEase = 2
 
 [node name="ProgressBarMarginContainer" type="MarginContainer" parent="VBoxContainer/ProgressBarContainer"]
 layout_mode = 2
@@ -95,7 +96,6 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("4_esopc")
-metadata/_custom_type_script = "uid://cqtexcwratk6l"
 
 [node name="ContentLabelMarginContainer" type="MarginContainer" parent="VBoxContainer/CenterMarginContainer/VBoxContainer/ContentLabelContainer"]
 layout_mode = 2
@@ -121,7 +121,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
 script = ExtResource("4_esopc")
-metadata/_custom_type_script = "uid://cqtexcwratk6l"
 
 [node name="LeftButton" type="Button" parent="VBoxContainer/CenterMarginContainer/VBoxContainer/HBoxContainer/LeftButtonPanelContainer"]
 custom_minimum_size = Vector2(40, 40)
@@ -146,7 +145,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
 script = ExtResource("4_esopc")
-metadata/_custom_type_script = "uid://cqtexcwratk6l"
 
 [node name="RightButton" type="Button" parent="VBoxContainer/CenterMarginContainer/VBoxContainer/HBoxContainer/RightButtonPanelContainer"]
 custom_minimum_size = Vector2(40, 40)
@@ -161,7 +159,6 @@ icon_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("4_esopc")
-metadata/_custom_type_script = "uid://cqtexcwratk6l"
 
 [node name="BottomMarginContainer" type="MarginContainer" parent="VBoxContainer/BottomContainer"]
 unique_name_in_owner = true

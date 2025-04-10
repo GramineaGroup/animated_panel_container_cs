@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://dicxmbke0imcl" path="res://scenes/Theme.tres" id="1_dxbve"]
 [ext_resource type="Script" uid="uid://dqix7f0bt6amw" path="res://scenes/cross/horizontal.gd" id="2_mi2no"]
 [ext_resource type="Texture2D" uid="uid://o1ln7v6iuk5v" path="res://icons/close.svg" id="3_k7hel"]
-[ext_resource type="Script" uid="uid://cqtexcwratk6l" path="res://addons/animated_panel_container_cs/AnimatedPanelContainer.cs" id="4_jxngj"]
+[ext_resource type="Script" uid="uid://c1thn6nufciqn" path="res://addons/animated_panel_container_cs/AnimatedPanelContainer.cs" id="4_jxngj"]
 [ext_resource type="Texture2D" uid="uid://dgknwv7v86hcn" path="res://icons/Under.svg" id="5_bhp70"]
 [ext_resource type="Texture2D" uid="uid://dsqxfi7ehknxi" path="res://icons/Progress.svg" id="6_upoy4"]
 [ext_resource type="Texture2D" uid="uid://dunatko0dk4n3" path="res://icons/TwitterLogo.svg" id="7_0s7r2"]
@@ -20,13 +20,14 @@ corner_radius_bottom_left = 18
 [sub_resource type="FontVariation" id="FontVariation_c4vo5"]
 
 [node name="Horizontal" type="PanelContainer"]
-offset_right = 394.0
+offset_right = 943.0
 offset_bottom = 628.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("1_dxbve")
 theme_type_variation = &"Test"
 script = ExtResource("2_mi2no")
+metadata/_custom_type_script = "uid://c1thn6nufciqn"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -55,7 +56,6 @@ icon_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("4_jxngj")
-metadata/_custom_type_script = "uid://cqtexcwratk6l"
 
 [node name="ProgressBarMarginContainer" type="MarginContainer" parent="HBoxContainer/ProgressBarContainer"]
 layout_mode = 2
@@ -96,7 +96,6 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("4_jxngj")
-metadata/_custom_type_script = "uid://cqtexcwratk6l"
 
 [node name="ContentLabelMarginContainer" type="MarginContainer" parent="HBoxContainer/CenterMarginContainer/VBoxContainer/ContentLabelContainer"]
 layout_mode = 2
@@ -122,7 +121,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
 script = ExtResource("4_jxngj")
-metadata/_custom_type_script = "uid://cqtexcwratk6l"
 
 [node name="LeftButton" type="Button" parent="HBoxContainer/CenterMarginContainer/VBoxContainer/HBoxContainer/LeftButtonPanelContainer"]
 custom_minimum_size = Vector2(40, 40)
@@ -147,7 +145,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
 script = ExtResource("4_jxngj")
-metadata/_custom_type_script = "uid://cqtexcwratk6l"
 
 [node name="RightButton" type="Button" parent="HBoxContainer/CenterMarginContainer/VBoxContainer/HBoxContainer/RightButtonPanelContainer"]
 custom_minimum_size = Vector2(40, 40)
@@ -162,7 +159,6 @@ icon_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("4_jxngj")
-metadata/_custom_type_script = "uid://cqtexcwratk6l"
 
 [node name="BottomMarginContainer" type="MarginContainer" parent="HBoxContainer/BottomContainer"]
 unique_name_in_owner = true
@@ -181,6 +177,5 @@ theme = ExtResource("1_dxbve")
 theme_type_variation = &"ActionButton"
 text = "Collapse"
 
-[connection signal="pressed" from="HBoxContainer/TopMarginContainer/HBoxContainer/PanelContainer/CloseButton" to="." method="OnCloseButtonPressed"]
 [connection signal="pressed" from="HBoxContainer/CenterMarginContainer/VBoxContainer/HBoxContainer/ExpandButton" to="." method="_on_expand_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/BottomContainer/BottomMarginContainer/VBoxContainer/CollapseButton" to="." method="_on_collapse_button_pressed"]

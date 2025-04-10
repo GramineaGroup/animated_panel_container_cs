@@ -31,11 +31,11 @@ public partial class Vertical : PanelContainer
         if (_isExpanded) return;
         var tween = CreateTween().SetParallel(true).SetTrans(Tween.TransitionType.Cubic).SetEase(Tween.EaseType.InOut);
 
-        _leftButtonPanelContainer.ConnectTween(tween).AnimatedTransparentShow(_duration);
-        _rightButtonPanelContainer.ConnectTween(tween).AnimatedTransparentShow(_duration);
-        _bottomContainer.ConnectTween(tween).AnimatedShow(_duration);
-        _contentLabelContainer.ConnectTween(tween).AnimatedShow(_duration);
-        _progressBarContainer.ConnectTween(tween).AnimatedShow(_duration);
+        _leftButtonPanelContainer.CreateNewTween().AnimatedTransparentShow(_duration);
+        _rightButtonPanelContainer.CreateNewTween().AnimatedTransparentShow(_duration);
+        _bottomContainer.CreateNewTween().AnimatedShow(_duration);
+        _contentLabelContainer.CreateNewTween().AnimatedShow(_duration);
+        _progressBarContainer.CreateNewTween().AnimatedShow(_duration);
 
         tween.TweenProperty(this, "custom_minimum_size", _size, _duration);
         tween.Finished += () => _isExpanded = true;
@@ -50,11 +50,11 @@ public partial class Vertical : PanelContainer
         CustomMinimumSize = Size;
         var tween = CreateTween().SetParallel(true).SetTrans(Tween.TransitionType.Cubic).SetEase(Tween.EaseType.InOut);
 
-        _leftButtonPanelContainer.ConnectTween(tween).AnimatedTransparentHide(_duration);
-        _rightButtonPanelContainer.ConnectTween(tween).AnimatedTransparentHide(_duration);
-        _bottomContainer.ConnectTween(tween).AnimatedHide(_duration);
-        _contentLabelContainer.ConnectTween(tween).AnimatedHide(_duration);
-        _progressBarContainer.ConnectTween(tween).AnimatedHide(_duration);
+        _leftButtonPanelContainer.CreateNewTween().AnimatedTransparentHide(_duration);
+        _rightButtonPanelContainer.CreateNewTween().AnimatedTransparentHide(_duration);
+        _bottomContainer.CreateNewTween().AnimatedHide(_duration);
+        _contentLabelContainer.CreateNewTween().AnimatedHide(_duration);
+        _progressBarContainer.CreateNewTween().AnimatedHide(_duration);
 
         tween.TweenProperty(this, "custom_minimum_size", new Vector2(0, 0), _duration);
         tween.Finished += () => _isExpanded = false;
