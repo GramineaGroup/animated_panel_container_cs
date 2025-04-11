@@ -11,7 +11,6 @@ public partial class AnimatedPanelContainer : PanelContainer
     // default Linear
     private Tween.TransitionType _trans;
     private Tween.EaseType _ease;
-    protected Vector2 _prevMinimumSize;
     protected Vector2 _currentMinimumSize;
     private Color _modulate;
     private Tween _tween;
@@ -120,7 +119,7 @@ public partial class AnimatedPanelContainer : PanelContainer
         CheckTween();
         _isHideCalled = true;
         _modulate = Modulate;
-        var t = _tween.TweenMethod(Callable.From((Color target) => InternalTransparentHide(target)), Modulate, new Color(Modulate.R, Modulate.G, Modulate.B, 0), duration).SetTrans(_trans);
+        var t = _tween.TweenMethod(Callable.From((Color target) => InternalTransparentHide(target)), Modulate, new Color(Modulate.R, Modulate.G, Modulate.B, 0), duration).SetEase(_ease).SetTrans(_trans);
         if (_delay > 0)
         {
             t.SetDelay(_delay);
@@ -176,7 +175,7 @@ public partial class AnimatedPanelContainer : PanelContainer
         {
             Modulate = new Color(Modulate.R, Modulate.G, Modulate.B, 0);
         }
-        var t = _tween.TweenMethod(Callable.From((Color target) => InternalTransparentShow(target)), Modulate, modulate, duration).SetTrans(_trans);
+        var t = _tween.TweenMethod(Callable.From((Color target) => InternalTransparentShow(target)), Modulate, modulate, duration).SetEase(_ease).SetTrans(_trans);
         if (_delay > 0)
         {
             t.SetDelay(_delay);
@@ -202,11 +201,11 @@ public partial class AnimatedPanelContainer : PanelContainer
         Modulate = target;
     }
 
-    public AnimatedPanelContainer Collapse()
+    public AnimatedPanelContainer Collapse(Vector2 newSize = new Vector2())
     {
         // set minimum size
         CustomMinimumSize = Size;
-        _currentMinimumSize = Vector2.Zero;
+        _currentMinimumSize = newSize;
         InternalExpandCollapse(_currentMinimumSize);
         return this;
     }
@@ -215,7 +214,7 @@ public partial class AnimatedPanelContainer : PanelContainer
     {
         CheckTween();
         _currentMinimumSize = newSize;
-        var t = _tween.TweenMethod(Callable.From((Vector2 target) => InternalExpandCollapse(target)), Size, newSize, duration).SetTrans(_trans);
+        var t = _tween.TweenMethod(Callable.From((Vector2 target) => InternalExpandCollapse(target)), Size, newSize, duration).SetEase(_ease).SetTrans(_trans);
         if (_delay > 0)
         {
             t.SetDelay(_delay);
@@ -264,14 +263,14 @@ public partial class AnimatedPanelContainer : PanelContainer
         {
             _currentMinimumSize = newSize;
         }
-        var t = _tween.TweenMethod(Callable.From((Vector2 target) => InternalExpandCollapse(target)), Size, _currentMinimumSize, duration).SetTrans(_trans);
+        var t = _tween.TweenMethod(Callable.From((Vector2 target) => InternalExpandCollapse(target)), Size, _currentMinimumSize, duration).SetEase(_ease).SetTrans(_trans);
         if (_delay > 0)
         {
             t.SetDelay(_delay);
             _delay = 0;
         }
         CustomMinimumSize = _currentMinimumSize;
-        if (_currentDuration != 0d) _currentDuration = duration;
+        if (_currentDuration != 0d) _currentDuration += duration;
         return this;
     }
 
@@ -289,9 +288,9 @@ public partial class AnimatedPanelContainer : PanelContainer
     {
         CheckTween();
         _currentMinimumSize = Size * scale;
-        var t = _tween.TweenMethod(Callable.From((Vector2 target) => InternalScale(target)), Scale, scale, duration).SetTrans(_trans);
+        var t = _tween.TweenMethod(Callable.From((Vector2 target) => InternalScale(target)), Scale, scale, duration).SetEase(_ease).SetTrans(_trans);
         CustomMinimumSize = _currentMinimumSize;
-        if (_currentDuration != 0d) _currentDuration = duration;
+        if (_currentDuration != 0d) _currentDuration += duration;
         return this;
     }
 
