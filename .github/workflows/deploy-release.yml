@@ -1,4 +1,4 @@
-name: "Deploy Release to release branch"
+name: "Deploy Release"
 on:
   push:
     branches:
@@ -12,7 +12,7 @@ env:
   PLUGIN_NAME: animated_panel_container_cs
 
 jobs:
-  upload:
+  deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: write
