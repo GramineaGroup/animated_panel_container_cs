@@ -35,6 +35,14 @@ jobs:
           type: "zip"
           filename: "${{env.PLUGIN_NAME}}.zip"
           path: "addons/${{env.PLUGIN_NAME}}"
+
+      - name: test
+        run: |
+          echo $PLUGIN_VERSION
+          echo $PLUGIN_VERSION
+          ls -al
+        env:
+          PLUGIN_VERSION: $GLOBAL_WORKFLOW_ENV
       
       - name: Upload Release
         uses: ncipollo/release-action@v1
