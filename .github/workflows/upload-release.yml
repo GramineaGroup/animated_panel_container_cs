@@ -41,13 +41,9 @@ jobs:
           echo $PLUGIN_VERSION
           echo $PLUGIN_VERSION
           ls -al
-        env:
-          PLUGIN_VERSION: $GLOBAL_WORKFLOW_ENV
       
       - name: Upload Release
         uses: ncipollo/release-action@v1
-        env:
-          PLUGIN_VERSION: $GLOBAL_WORKFLOW_ENV
         with:
           artifacts: "${{env.PLUGIN_NAME}}.zip"
           tag: "${{env.PLUGIN_VERSION}}"
