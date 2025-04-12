@@ -5,11 +5,13 @@ on:
       - main
     paths:
       - "addons/**"
+      - '.github/workflows/deploy-release.yml'
   pull_request:
     branches:
       - main
     paths:
       - "addons/**"
+      - '.github/workflows/deploy-release.yml'
   workflow_dispatch:
 
 env:
