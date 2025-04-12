@@ -29,7 +29,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./addons/${{env.PLUGIN_NAME}}
           publish_branch: release
-          enable_jekyll: false
+          enable_jekyll: true
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: "deploy: Updated to ${{env.PLUGIN_VERSION}} @${{ github.event.head_commit.message }}"
+          commit_message: "deploy: Updated to ${{env.PLUGIN_VERSION}}"
