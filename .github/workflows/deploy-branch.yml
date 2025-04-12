@@ -1,0 +1,31 @@
+name: "Deploy Release to release branch"
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "addons/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "addons/**"
+  workflow_dispatch:
+
+env:
+  PLUGIN_NAME: animated_panel_container_cs
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./addons/${{env.PLUGIN_NAME}}
+          publish_branch: release
