@@ -27,7 +27,7 @@ jobs:
         
       - name: Get Version
         run: |
-          echo "PLUGIN_VERSION=$(grep 'version=' addons/${{env.PLUGIN_NAME}}/plugin.cfg | sed -e 's/version=//')" >> $GITHUB_ENV
+          echo "PLUGIN_VERSION=$(grep 'version=' addons/${{env.PLUGIN_NAME}}/plugin.cfg | sed -e 's/version=//' -e 's/\"//g')" >> $GITHUB_ENV
 
       - name: Archive Release
         uses: thedoctor0/zip-release@0.7.5
@@ -46,5 +46,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "${{env.PLUGIN_NAME}}.zip"
-          tag: "${{env.PLUGIN_VERSION}}"
+          tag: ${{env.PLUGIN_VERSION}}
           allowUpdates: true
