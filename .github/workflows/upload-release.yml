@@ -1,0 +1,45 @@
+name: "Upload Release"
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "addons/**"
+      - '.github/workflows/upload-release.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "addons/**"
+      - '.github/workflows/upload-release.yml'
+  workflow_dispatch:
+
+env:
+  PLUGIN_NAME: animated_panel_container_cs
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@master
+        
+      - name: Get Version
+        run: |
+          echo "PLUGIN_VERSION=$(grep 'version=' addons/${{env.PLUGIN_NAME}}/plugin.cfg | sed -e 's/version=//' -e 's/\"//g')" >> $GITHUB_ENV
+
+      - name: Archive Release
+        uses: thedoctor0/zip-release@0.7.5
+        with:
+          type: "zip"
+          filename: "${{env.PLUGIN_NAME}}.zip"
+          path: "addons/${{env.PLUGIN_NAME}}"
+      
+      - name: Upload Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "${{env.PLUGIN_NAME}}.zip"
+          name: "v${{env.PLUGIN_VERSION}}"
+          tag: "${{env.PLUGIN_VERSION}}"
+          allowUpdates: true
