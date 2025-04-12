@@ -32,4 +32,4 @@ jobs:
           enable_jekyll: false
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: "deploy: Updated to ${{env.PLUGIN_VERSION}} @${{ GITHUB_SHA }}"
+          commit_message: "deploy: Updated to ${{env.PLUGIN_VERSION}} @${{ github.event.head_commit.message }}"
